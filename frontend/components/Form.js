@@ -7,10 +7,12 @@ export default class Form extends React.Component {
 
   // bottom button toggle display 
 
+
 	
 	render() {
     let {name} = this.props.ToDos.newTask[0]
-		// console.log(name)
+		let {buttonInfo} = this.props
+    // console.log(buttonInfo)
 		return (
 			<div>
 				<form onSubmit={this.props.onSubmit}>
@@ -21,8 +23,8 @@ export default class Form extends React.Component {
 					></input>
 					<button>Submit</button>
 					<br></br>
-					<button>{}</button>
 				</form>
+				<button onClick={this.props.onClickToggle}>{buttonInfo()}</button>
 			</div>
 		);
 	}
